@@ -1,0 +1,37 @@
+/* regole generali */
+
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+body,html{
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  /* debug */
+  height: 100%;
+  background: lightyellow;
+  /* fine debug */
+}
+
+/* regole page */
+.sfondo_header {
+  min-height: 15%;
+  background: green;
+}
+.sfondo_main{
+  min-height: 85%;
+  background: lightgrey;
+}
+.container {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  background: lightblue;
+}

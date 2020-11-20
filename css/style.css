@@ -35,3 +35,26 @@ body,html{
   width: 90%;
   background: lightblue;
 }
+
+/* regole aside */
+
+.left,.right{
+  float:left;
+  /* debug */
+  height: 100%;
+  /* fine debug */
+}
+
+.left {
+  width: 35%;
+  /* debug */
+  background: lightgreen;
+  /* fine debug */
+}
+.right{
+  width: 65%;
+  /* debug */
+  background: pink;
+  /* fine deb
+
+}

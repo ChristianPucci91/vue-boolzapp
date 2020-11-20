@@ -5,35 +5,22 @@
   margin:0;
   box-sizing: border-box;
 }
-body,html{
-  height: 100%;
-}
 
 .page {
-  position: relative;
+  display: flex;
   /* debug */
-  height: 100%;
-  background: lightyellow;
+  height: 100vh;
+  background-image: linear-gradient( to bottom,#009687 0px,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
   /* fine debug */
 }
 
-/* regole page */
-.sfondo_header {
-  min-height: 15%;
-  background: green;
-}
-.sfondo_main{
-  min-height: 85%;
-  background: lightgrey;
-}
 .container {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  margin: auto;
-  height: 90%;
-  width: 90%;
-  background: lightblue;
+ width: 85%;
+ min-width: 900px;
+ height: 90%;
+ background: white;
+ box-shadow: 0 2px 2px 2px #c6c7c1;
+ margin:auto;
 }
 
 /* regole aside */
@@ -55,6 +42,25 @@ body,html{
   width: 65%;
   /* debug */
   background: pink;
-  /* fine deb
+  /* fine deb*/
+}
 
+/* Regole aside blocchi interni */
+
+.upper_left > .nome_user,
+.upper_left > .notifiche {
+  height: 80px;
+  width: 100%;
+  /* debug */
+  background: white;
+  border:1px solid black;
+  /* fine deb*/
+}
+.upper_left > .search_user {
+  height: 50px;
+  width: 100%;
+  /* debug */
+  background: white;
+  border:1px solid black;
+  /* fine deb*/
 }

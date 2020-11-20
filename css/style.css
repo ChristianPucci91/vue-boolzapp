@@ -4,21 +4,25 @@
   padding: 0;
   margin:0;
   box-sizing: border-box;
+  /* debug */
+  background: white;
+  border:1px solid black;
+  /* fine deb*/
 }
 
 .page {
   display: flex;
   /* debug */
   height: 100vh;
-  background-image: linear-gradient( to bottom,#009687 0px,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
+  background-image: linear-gradient( to bottom,#009687 ,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
   /* fine debug */
 }
 
 .container {
+ display: flex;
  width: 85%;
  min-width: 900px;
  height: 90%;
- background: white;
  box-shadow: 0 2px 2px 2px #c6c7c1;
  margin:auto;
 }
@@ -26,41 +30,52 @@
 /* regole aside */
 
 .left,.right{
-  float:left;
   /* debug */
   height: 100%;
   /* fine debug */
 }
 
 .left {
+  display: flex;
+  flex-direction: column;
   width: 35%;
   /* debug */
   background: lightgreen;
   /* fine debug */
 }
 .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 65%;
   /* debug */
   background: pink;
   /* fine deb*/
 }
 
-/* Regole aside blocchi interni */
+/* Regole aside blocchi interni parte sinistra*/
 
 .upper_left > .nome_user,
 .upper_left > .notifiche {
   height: 80px;
   width: 100%;
-  /* debug */
-  background: white;
-  border:1px solid black;
-  /* fine deb*/
+
 }
 .upper_left > .search_user {
   height: 50px;
   width: 100%;
-  /* debug */
-  background: white;
-  border:1px solid black;
-  /* fine deb*/
+}
+
+/* regole chat sinitra aside */
+.chat {
+  overflow-y:auto;
+}
+
+li {
+  height: 60px;
+}
+/* regole main blocchi interni parte destra */
+
+.right > .user_chat {
+  height: 80px;
 }

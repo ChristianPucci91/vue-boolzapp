@@ -98,6 +98,27 @@
   text-decoration: underline;
   color:grey;
 }
+
+/* search user */
+.search_user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  /* debug */
+  background: white;
+    /* fine debug */
+}
+.search_icon{
+  margin: 0 10px;
+}
+.search_input {
+  width: 100%;
+}
+.search_input > input {
+  width: 100%;
+  border:0;
+}
 /* regole chat sinitra aside */
 .chat {
   overflow-y:auto;

@@ -5,11 +5,9 @@
   margin:0;
   box-sizing: border-box;
   /* debug */
-  background: white;
   border:1px solid black;
   /* fine deb*/
 }
-
 .page {
   display: flex;
   /* debug */
@@ -17,7 +15,6 @@
   background-image: linear-gradient( to bottom,#009687 ,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
   /* fine debug */
 }
-
 .container {
  display: flex;
  width: 85%;
@@ -28,7 +25,6 @@
 }
 
 /* regole aside */
-
 .left,.right{
   /* debug */
   height: 100%;
@@ -54,18 +50,54 @@
 }
 
 /* Regole aside blocchi interni parte sinistra*/
-
 .upper_left > .nome_user,
 .upper_left > .notifiche {
   height: 80px;
   width: 100%;
-
 }
 .upper_left > .search_user {
   height: 50px;
   width: 100%;
 }
 
+/* regole blocchi interni .upper_left */
+
+ /* Nome user  */
+.nome_user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nome_user_img img{
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.nome_user_icons i {
+  margin-right:15px;
+}
+
+/* notifiche */
+.notifiche {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #8edafd;
+}
+.notifiche_img {
+  font-size: 20px;
+  margin: 15px;
+  color:#8edafd;
+  border-radius: 50%;
+  background-color:white;
+  padding: 10px;
+}
+
+.notifiche_text a{
+  text-decoration: underline;
+  color:grey;
+}
 /* regole chat sinitra aside */
 .chat {
   overflow-y:auto;

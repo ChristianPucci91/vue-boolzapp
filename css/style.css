@@ -4,10 +4,12 @@
   padding: 0;
   margin:0;
   box-sizing: border-box;
-  /* debug */
-  border:1px solid black;
-  /* fine deb*/
 }
+
+i {
+  color:grey;
+}
+
 .page {
   display: flex;
   /* debug */
@@ -36,7 +38,7 @@
   flex-direction: column;
   width: 35%;
   /* debug */
-  background: lightgreen;
+  background: white;
   /* fine debug */
 }
 .right{
@@ -45,18 +47,25 @@
   justify-content: space-between;
   width: 65%;
   /* debug */
-  background: pink;
+  background: lightgrey;
   /* fine deb*/
 }
 
 /* Regole aside blocchi interni parte sinistra*/
-.upper_left > .nome_user,
 .upper_left > .notifiche {
   height: 80px;
   width: 100%;
 }
+
+.upper_left > .nome_user{
+  height: 60px;
+  width: 100%;
+  /* debug */
+  background: lightgrey;
+  /* fine debug */
+}
 .upper_left > .search_user {
-  height: 50px;
+  height: 40px;
   width: 100%;
 }
 
@@ -137,9 +146,52 @@
 }
 .conversazione_dati {
   margin-left: 20px;
+  width: 100%;
+}
+.dati_utente {
+  display: flex;
+  justify-content: space-between;
 }
 /* regole main blocchi interni parte destra */
 
+/* barra superiore nome user chat */
 .right > .user_chat {
-  height: 80px;
+  height: 60px;
+}
+
+.user_chat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icone_chat > i {
+  margin-right: 20px;
+}
+
+/* section conversazione */
+
+section{
+  background-image: url("../img/mine.jpg");
+  height: 100%;
+  background-size:auto;
+}
+
+/* sezione user_chat_box */
+
+.user_chat_box {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  min-height: 60px;
+}
+
+.user_chat_input {
+  width: 80%;
+}
+.user_chat_input > input{
+  width: 100%;
+  height: 40px;
+}
+.user_chat_icon {
+  width: 10%;
 }

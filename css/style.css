@@ -17,17 +17,9 @@
 .container {
  display: flex;
  width: 85%;
- min-width: 900px;
  height: 90%;
  box-shadow: 0 2px 2px 2px #c6c7c1;
  margin:auto;
-}
-
-/* regole aside */
-.left,.right{
-  /* debug */
-  height: 100%;
-  /* fine debug */
 }
 
 .left {
@@ -50,7 +42,6 @@
 
 /* Regole aside blocchi interni parte sinistra*/
 
-
 /* regole blocchi interni .upper_left */
 
  /* Nome user  */
@@ -59,15 +50,16 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  width: 100%;
   background: #eaeaea;
 }
 .nome_user_img {
   display: flex;
   align-items: center;
+  padding: 7px;
+  height: 100%
 }
 .nome_user_img img{
-  height: 40px;
+  height: 100%;
   border-radius: 50%;
   margin:0 15px;
 }
@@ -87,7 +79,6 @@
   align-items: center;
   background-color: #8edafd;
   height: 80px;
-  width: 100%;
 }
 .notifiche_img {
   font-size: 20px;
@@ -119,6 +110,7 @@
 .search_icon{
   padding: 6px;
   background: white;
+  color:#b1b1b1;
 }
 .search_input {
   width: 100%;
@@ -144,8 +136,11 @@
   background: #e8ebeb;
 }
 .conversazione_img img{
-  height: 50px;
+  height: 100%;
   border-radius: 50%;
+}
+.conversazione_img{
+  height: 100%;
 }
 .conversazione_dati {
   margin-left: 20px;
@@ -190,13 +185,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 60px;
+  height: 100%;
   border-left: 1px solid #e8ebeb;
   padding: 5px 0 5px 15px;
 }
 
 .chat_attiva > .conversazione_img > img {
-  height: 40px;
+  height: 100%;
+  padding: 2px 0;
 }
 /* section conversazione */
 

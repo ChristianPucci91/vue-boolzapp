@@ -26,18 +26,14 @@
   display: flex;
   flex-direction: column;
   width: 35%;
-  /* debug */
   background: white;
-  /* fine debug */
 }
 .right{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 65%;
-  /* debug */
   background: lightgrey;
-  /* fine deb*/
 }
 
 /* Regole aside blocchi interni parte sinistra*/
@@ -61,7 +57,7 @@
 .nome_user_img img{
   height: 100%;
   border-radius: 50%;
-  margin:0 15px;
+  margin:0 11px;
 }
 .nome_user_img > span {
   font-size: 15px;
@@ -259,4 +255,48 @@ section{
 .user_chat_icon {
   width: 10%;
   color: #697376;
+}
+
+/* ///// MEDIA QUERY RULES ////// */
+
+/* Tablet size */
+
+@media screen and (max-width:769px){
+ *{
+   font-size: 13px;
+  }
+ .data_msg p {
+   font-size: 10px;
+  }
+ .nome_user_img > span {
+    font-size: 11px;
+  }
+ .conversazione_dati {
+    width: 80%;
+    padding: 10px 0 0 0;
+  }
+ .conversazione_img {
+    height: 85%;
+  }
+ .nome_user_img {
+    height: 80%;
+  }
+}
+@media screen and (max-width:568px){
+  .nome_user_img img {
+    display: none;
+  }
+  .nome_user_icons i {
+    margin-right: 10px;
+    font-size: 11px;
+  }
+  .notifiche {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .notifiche_img {
+    font-size: 20px;
+    margin:0;
+ }
 }

@@ -95,10 +95,9 @@ var app = new Vue({
       this.selected = index;
     },
     enterMsg: function (index) { // TEST milestone3, aggiungere un messaggio e ricevere una risposta
-      this.users.chat.push({...this.newMsg})
-      // this.time = "17:00";
-      // this.send = 1;
-    },
+
+      this.users.chat.push([{...this.newMsg}]);
+    }
   }
 
 })//// FUNZIONAAA

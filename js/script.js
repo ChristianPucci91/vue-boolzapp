@@ -40,7 +40,7 @@ var app = new Vue({
            send:1
          },
          {
-           time:"16:28",
+           time:"16:29",
            msg:"Ho visto tuo fratello",
            send:1
          },
@@ -88,7 +88,12 @@ var app = new Vue({
   methods: { // asociato al click la proprietà selected sarà uguale all'index cliccato
     selUser:function (index) {
       this.selected = index;
-    }
+    },
+    enterMsg: function (index) { // TEST milestone3, aggiungere un messaggio e ricevere una risposta
+      this.users.chat.msg.push(users[selected].chat.msg.length+1)
+      // this.time = "17:00";
+      // this.send = 1;
+    },
   }
 
 })//// FUNZIONAAA

@@ -7,8 +7,8 @@
 var app = new Vue({
   el: "#root",
   data: {
-    selected:0,
-    users : [
+    selected:0, // proprietà che mi servirà per confrontare l'index al click
+    users : [  // array con tutti i dati di ogni utente
       {
         name:"Michele",
         img:"img/avatar_1.jpg",
@@ -67,7 +67,7 @@ var app = new Vue({
       },
    ]
   },
-  methods: {
+  methods: { // asociato al click la proprietà selected sarà uguale all'index cliccato
     selUser:function (index) {
       this.selected = index;
     }

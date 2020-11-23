@@ -69,7 +69,7 @@
 
            </div>
            <ul class="chat"> <!-- blocco chat sx aside -->
-
+              <!-- per ogni elemento dell'array avrò una lista di utenti con tutte le loro proprietà -->
              <li v-for="(user,index) in users"  @click="selUser(index)" class="conversazione"> <!-- conversazione -->
                <div class="conversazione_img"> <!-- conversazione logo -->
 
@@ -104,17 +104,20 @@
                <div class="conversazione_img"> <!-- conversazione logo -->
 
                  <img :src="users[selected].img" alt="conversazione_1">
+                 <!-- prenderà l'img a seconda dell'index cliccato -->
 
                </div>
                <div class="conversazione_dati"> <!-- dati conversazione -->
                  <div class="dati_utente"> <!-- nome utente conversazione -->
 
                    <h3>{{users[selected].name}}</h3>
+                   <!-- prenderà la proprietà nome dell'index selezionato -->
 
                  </div>
                  <div class="connessione_utente"> <!-- connessione utente -->
 
                    <p>Ultimo accesso oggi alle {{users[selected].chat[users[selected].chat.length -1].time}}</p>
+                   <!-- prenderà ogni ultimo elemento "time" della lunghezza dell'array "chat" dell'index seleionato-->
 
                  </div>
 

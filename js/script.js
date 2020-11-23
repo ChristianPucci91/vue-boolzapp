@@ -7,8 +7,7 @@
 var app = new Vue({
   el: "#root",
   data: {
-    selected:0,
-    msg:'', // proprietà che mi servirà per confrontare l'index al click
+    selected:0, // proprietà che mi servirà per confrontare l'index al click
     users : [  // array con tutti i dati di ogni utente
       {
         name:"Michele",
@@ -84,14 +83,19 @@ var app = new Vue({
          }
        ]
       },
-   ]
+   ],
+   newMsg:{
+     time:"16:10",
+     msg:"",
+     send:1
+   }
   },
   methods: { // asociato al click la proprietà selected sarà uguale all'index cliccato
     selUser: function (index) {
       this.selected = index;
     },
     enterMsg: function (index) { // TEST milestone3, aggiungere un messaggio e ricevere una risposta
-      this.users[selected].chat[users[selected].chat.length + 1].msg.push(this.users[selected].chat)
+      this.users.chat.push({...this.newMsg})
       // this.time = "17:00";
       // this.send = 1;
     },

@@ -56,7 +56,7 @@ var app = new Vue({
         img:"img/avatar_4.jpg",
         chat: [
          {
-           time:"16:28",
+           time:"16:05",
            msgSent:"ciao David come stai?",
          },
          {

@@ -132,24 +132,24 @@
              </div>
 
            </div>
-           <section >
+           <section>
 
-             <ul class="chat_section"> <!-- chat con l'utente -->
+             <ul v-for="(msg,index) in users[selected].chat" class="chat_section"> <!-- chat con l'utente -->
                <li class="messaggi mandati"> <!-- msg mandato -->
 
                  <div class="msg_text">
-                   <h4></h4>
+                   <h4>{{msg.msgSent}}</h4>
                  </div>
                  <div class="data_msg">
-                   <p>10/01/2020 15:50:00</p>
+                   <p>{{msg.time}}</p>
                  </div>
 
                </li>
                <li class="messaggi ricevuti"> <!-- msg ricevuto -->
 
-                 <h4></h4>
+                 <h4>{{msg.msgRcv}}</h4>
                  <div class="data_msg">
-                    <p>10/01/2020 15:50:00</p>
+                    <p>{{msg.time}}</p>
                  </div>
 
                </li>

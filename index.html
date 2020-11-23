@@ -70,81 +70,21 @@
            </div>
            <ul class="chat"> <!-- blocco chat sx aside -->
 
-             <li class="conversazione"> <!-- conversazione -->
+             <li v-for="(user,index) in users"  @click="selUser(index)" class="conversazione"> <!-- conversazione -->
                <div class="conversazione_img"> <!-- conversazione logo -->
 
-                 <img src="img/avatar_1.jpg" alt="conversazione_1">
+                 <img :src="user.img" alt="conversazione_1">
 
                </div>
                <div class="conversazione_dati"> <!-- dati conversazione -->
                  <div class="dati_utente"> <!-- nome utente conversazione -->
 
-                   <h3>Michele</h3><span>16.28</span>
+                   <h3>{{user.name}}</h3><span>{{user.chat.time}}</span>
 
                  </div>
                  <div class="dati_chat"> <!-- conversazione utente -->
 
-                   <p>conversazione tra utenti...</p>
-
-                 </div>
-
-               </div>
-             </li>
-             <li class="conversazione"> <!-- conversazione -->
-               <div class="conversazione_img"> <!-- conversazione logo -->
-
-                 <img src="img/avatar_2.jpg" alt="conversazione_2">
-
-               </div>
-               <div class="conversazione_dati"> <!-- dati conversazione -->
-                 <div class="dati_utente"> <!-- nome utente conversazione -->
-
-                   <h3>Fabio</h3><span>16.28</span>
-
-                 </div>
-                 <div class="dati_chat"> <!-- conversazione utente -->
-
-                   <p>conversazione tra utenti...</p>
-
-                 </div>
-
-               </div>
-             </li>
-             <li class="conversazione"> <!-- conversazione -->
-               <div class="conversazione_img"> <!-- conversazione logo -->
-
-                 <img src="img/avatar_3.jpg" alt="conversazione_4">
-
-               </div>
-               <div class="conversazione_dati"> <!-- dati conversazione -->
-                 <div class="dati_utente"> <!-- nome utente conversazione -->
-
-                   <h3>Marco</h3><span>16.28</span>
-
-                 </div>
-                 <div class="dati_chat"> <!-- conversazione utente -->
-
-                   <p>conversazione tra utenti...</p>
-
-                 </div>
-
-               </div>
-             </li>
-             <li class="conversazione"> <!-- conversazione -->
-               <div class="conversazione_img"> <!-- conversazione logo -->
-
-                 <img src="img/avatar_4.jpg" alt="conversazione_4">
-
-               </div>
-               <div class="conversazione_dati"> <!-- dati conversazione -->
-                 <div class="dati_utente"> <!-- nome utente conversazione -->
-
-                   <h3>Adriano</h3><span>16.28</span>
-
-                 </div>
-                 <div class="dati_chat"> <!-- conversazione utente -->
-
-                   <p>conversazione tra utenti...</p>
+                   <p>{{user.chat.msgSent}}</p>
 
                  </div>
 
@@ -163,18 +103,18 @@
              <div class="chat_attiva"> <!-- conversazione -->
                <div class="conversazione_img"> <!-- conversazione logo -->
 
-                 <img src="img/avatar_1.jpg" alt="conversazione_1">
+                 <img :src="users[selected].img" alt="conversazione_1">
 
                </div>
                <div class="conversazione_dati"> <!-- dati conversazione -->
                  <div class="dati_utente"> <!-- nome utente conversazione -->
 
-                   <h3>Michele</h3>
+                   <h3>{{users[selected].name}}</h3>
 
                  </div>
                  <div class="connessione_utente"> <!-- connessione utente -->
 
-                   <p>Ultimo accesso oggi alle 20/11/2020 12:01:32</p>
+                   <p>Ultimo accesso oggi alle {{users[selected].chat[users[selected].chat.length -1].time}}</p>
 
                  </div>
 
@@ -189,13 +129,13 @@
              </div>
 
            </div>
-           <section>
+           <section >
 
              <ul class="chat_section"> <!-- chat con l'utente -->
                <li class="messaggi mandati"> <!-- msg mandato -->
 
                  <div class="msg_text">
-                   <h4>Ciao! Ti ricordi dell'appuntamento di domani mattina?</h4>
+                   <h4></h4>
                  </div>
                  <div class="data_msg">
                    <p>10/01/2020 15:50:00</p>
@@ -204,37 +144,9 @@
                </li>
                <li class="messaggi ricevuti"> <!-- msg ricevuto -->
 
-                 <h4>Ciao! si mi ricordo, a che ora ci vediamo?</h4>
+                 <h4></h4>
                  <div class="data_msg">
                     <p>10/01/2020 15:50:00</p>
-                 </div>
-
-               </li>
-               <li class="messaggi mandati">
-
-                 <div class="msg_text">
-                   <h4>Ci vediamo per le 9:30, vabene?</h4>
-                 </div>
-                 <div class="data_msg">
-                   <p>10/01/2020 15:50:00</p>
-                 </div>
-
-               </li>
-               <li class="messaggi ricevuti">
-
-                 <h4>Perfetto! ci vediamo al solito posto alle 9:30, a domani!</h4>
-                 <div class="data_msg">
-                    <p>10/01/2020 15:50:00</p>
-                 </div>
-
-               </li>
-               <li class="messaggi mandati">
-
-                 <div class="msg_text">
-                   <h4>Ciao! a domani!</h4>
-                 </div>
-                 <div class="data_msg">
-                   <p>10/01/2020 15:50:00</p>
                  </div>
 
                </li>

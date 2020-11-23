@@ -15,11 +15,18 @@ var app = new Vue({
         chat: [
          {
            time:"16:28",
-           msgSent:"ciao Michele come stai?",
+           msg:"ciao Michele come stai?",
+           send:1
          },
          {
            time:"16:30",
-           msgRcv:"tutto bene,grazie",
+           msg:"tutto bene,grazie",
+           send:0
+         },
+         {
+           time:"16:35",
+           msg:"Te come va?",
+           send:0
          }
        ]
       },
@@ -29,11 +36,18 @@ var app = new Vue({
         chat: [
          {
            time:"16:28",
-           msgSent:"ciao Giovanni come stai?",
+           msg:"ciao Giovanni come stai?",
+           send:1
+         },
+         {
+           time:"16:28",
+           msg:"Ho visto tuo fratello",
+           send:1
          },
          {
            time:"16:40",
-           msgRcv:"tutto bene,grazie",
+           msg:"tutto bene,grazie te?",
+           send:0
          }
        ]
       },
@@ -43,11 +57,13 @@ var app = new Vue({
         chat: [
          {
            time:"16:28",
-           msgSent:"ciao Fabio come stai?",
+           msg:"ciao Fabio come stai?",
+           send:1
          },
          {
            time:"16:50",
-           msgRcv:"tutto bene,grazie",
+           msg:"tutto bene,grazie te? come va?",
+           send:0
          }
        ]
       },
@@ -57,11 +73,13 @@ var app = new Vue({
         chat: [
          {
            time:"16:05",
-           msgSent:"ciao David come stai?",
+           msg:"ciao David come stai?",
+           send:1
          },
          {
            time:"16:10",
-           msgRcv:"tutto bene,grazie",
+           msg:"tutto bene,grazie!!!",
+           send:0
          }
        ]
       },

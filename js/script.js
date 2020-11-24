@@ -84,7 +84,7 @@ var app = new Vue({
        ]
       },
    ],
-   newMsg:{
+   newMsg:{ // nuovo array per i messaggi inviati
      time:"16:10",
      msg:"",
      send:1
@@ -95,8 +95,8 @@ var app = new Vue({
       this.selected = index;
     },
     enterMsg: function (index) { // TEST milestone3, aggiungere un messaggio e ricevere una risposta
-
-      this.users.chat.push([{...this.newMsg}]);
+      this.users[this.selected].chat.push({...this.newMsg});
+      this.newMsg.msg = ""
     }
   }
 

@@ -219,6 +219,7 @@ section{
   border-radius: 10px;
   max-width: 40%;
   margin-bottom: 20px;
+  min-width: 30%;
 }
 
 .mandati {
@@ -234,6 +235,12 @@ section{
   align-self: flex-end;
   font-size: 10px;
   color: #b6babc;
+  margin-top: 5px;
+}
+.data_msg > p,
+.dati_chat > p,
+.dati_utente > span {
+  font-weight: bolder;
 }
 
 /* sezione user_chat_box */

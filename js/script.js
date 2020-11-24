@@ -1,7 +1,10 @@
-// Per oggi saremo sulla milestone2, chat differenziate:
-// cliccando sulla chat vedo quella corrispondente;
-// con header con dati relativi a chat attiva;
-// relativa chat in elenco rimane selezionata
+// Funzioni dello script corrente:
+// ci sarà un array di utenti con le varie proprietà
+// nome,avatar ed un sotto array chat con il tempo ed i messaggi mandati
+
+// 1-Al click di uno degli utenti presenti apparirà l'utente cliccato e la chat relativa contente tutti i dati appartenenti all'array selezionato quindi nome,avatar messaggi della chat ecc.
+
+// 2- All'inserimento tramite tasto ENTER o cliccando sull'icona microfono il programma inserirà un nuovo array all'interno dell'index selezionato con i vari messaggi inseriti e i dati come la data dell'inserimento il testo inserito, in automatico si riceverà una risposta random dalla cpu dopo un 1 secondo e farà lo stesso procedimento scritto sopra
 
 
 var app = new Vue({
@@ -119,21 +122,12 @@ var app = new Vue({
       this.cpuMsg.time = datetime;
     },
     cpuMessage: function () {
-
       const random = ["ciao","ok","ciao, come va?","tutto bene!","weee grande!","vabene"];
       let min = random[Math.floor(Math.random()*random.length)];
       console.log(min);
       this.cpuMsg.msg = min
       setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg})), 1000);
-
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     }
   },
-
-
-
-
-
-
-
-})//// FUNZIONAAA
+})

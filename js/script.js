@@ -102,12 +102,12 @@ var app = new Vue({
     },
     enterMsg: function (index) { // milestone3, aggiungere un messaggio e ricevere una risposta
       // aggiunto bonus risposta randomizzata presa da un array
-      this.getTime();
+      this.getUserTime();
       this.users[this.selected].chat.push({...this.newMsg});
       this.newMsg.msg = ""
       this.cpuMessage();
     },
-    getTime: function() {
+    getUserTime: function() {
       var currentdate = new Date();
       var datetime = currentdate.getDate() + "/"
       + (currentdate.getMonth()+1)  + "/"
@@ -123,15 +123,12 @@ var app = new Vue({
       let min = random[Math.floor(Math.random()*random.length)];
       console.log(min);
       this.cpuMsg.msg = min
-      setTimeout(() => this.users[this.selected].chat.push({...this.cpuMsg}), 5000);
-      this.getTime();
+      setTimeout(() => this.users[this.selected].chat.push({...this.cpuMsg}), 1000);
 
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     }
   },
-  // beforeMount(){
-  //   this.getTime();
-  // },
+
 
 
 

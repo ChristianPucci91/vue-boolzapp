@@ -88,12 +88,12 @@ var app = new Vue({
       },
    ],
    newMsg:{ // nuovo array per i messaggi inviati
-     time:"16:10",
+     time:"",
      msg:"",
      send:1
    },
    cpuMsg:{ // nuovo array per i messaggi inviativ dalla cpu
-     time:"16:11",
+     time:"",
      msg:"",
      send:0
    },

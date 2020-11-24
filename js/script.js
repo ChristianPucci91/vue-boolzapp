@@ -90,7 +90,7 @@ var app = new Vue({
      send:1
    },
    cpuMsg:{ // nuovo array per i messaggi inviativ dalla cpu
-     time:"16:10",
+     time:"16:11",
      msg:"",
      send:0
    },
@@ -108,8 +108,11 @@ var app = new Vue({
       let min = random[Math.floor(Math.random()*random.length)];
       console.log(min);
       this.cpuMsg.msg = min
-      this.users[this.selected].chat.push({...this.cpuMsg});
+      setTimeout(() => this.users[this.selected].chat.push({...this.cpuMsg}), 1000);
+      // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     }
+
   }
+
 
 })//// FUNZIONAAA

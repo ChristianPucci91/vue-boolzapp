@@ -22,18 +22,30 @@
            <div class="upper_left"> <!-- blocco up sx container -->
 
              <div class="nome_user"> <!-- barra nome user -->
-               <div class="nome_user_img"> <!-- box logo user -->
+               <div v-for="item in me" class="nome_user_img"> <!-- box logo user -->
 
-                 <img src="img/avatar_io.jpg" alt="nome_user_img">
-                 <span>Nome Utente</span>
+                 <img :src="item.img" alt="nome_user_img">
+                 <span>{{item.name}}</span>
 
                </div>
                <div class="nome_user_icons"> <!-- box logo user icons -->
 
+                 <i class="fas fa-user-plus" @click="addUser"></i>
                  <i class="fas fa-circle-notch"></i>
                  <i class="fas fa-comment-alt"></i>
                  <i class="fas fa-ellipsis-v"></i>
 
+               </div>
+
+               <!-- // TEST ADD USER  -->
+               <div class="add_user" :class="visible? 'show':'hide'">
+                 <div class="delete_friend">
+                      <i class="fas fa-times" @click="deleteUser"></i>
+                 </div>
+
+                 <h3>Inserisci il nome del nuovo utente</h3>
+                 <input type="text" name="" value="" v-model="newUser.name">
+                 <button type="button" name="button" @click="addFriend">Aggiungi</button>
                </div>
 
              </div>

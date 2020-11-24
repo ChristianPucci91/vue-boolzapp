@@ -88,15 +88,27 @@ var app = new Vue({
      time:"16:10",
      msg:"",
      send:1
-   }
+   },
+   cpuMsg:{ // nuovo array per i messaggi inviativ dalla cpu
+     time:"16:10",
+     msg:"",
+     send:0
+   },
+
   },
   methods: { // asociato al click la proprietà selected sarà uguale all'index cliccato
     selUser: function (index) {
       this.selected = index;
     },
-    enterMsg: function (index) { // TEST milestone3, aggiungere un messaggio e ricevere una risposta
+    enterMsg: function (index) { // milestone3, aggiungere un messaggio e ricevere una risposta
+      // aggiunto bonus risposta randomizzata presa da un array
       this.users[this.selected].chat.push({...this.newMsg});
       this.newMsg.msg = ""
+      const random = ["ciao","ok","ciao, come va?","tutto bene!","weee grande!","vabene"];
+      let min = random[Math.floor(Math.random()*random.length)];
+      console.log(min);
+      this.cpuMsg.msg = min
+      this.users[this.selected].chat.push({...this.cpuMsg});
     }
   }
 

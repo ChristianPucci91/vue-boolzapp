@@ -11,6 +11,7 @@ var app = new Vue({
   el: "#root",
   data: {
     selected:0, // proprietà che mi servirà per confrontare l'index al click
+    search:'',
     users : [  // array con tutti i dati di ogni utente
       {
         name:"Michele",

@@ -71,9 +71,9 @@
                 <i class="fas fa-search"></i>
 
               </div>
-              <div class="search_input"> <!-- barra input search -->
+              <div class="search_input" > <!-- barra input search -->
 
-                <input type="text" name="" value="" placeholder="Cerca o inizia nuova chat...">
+                <input type="text" name="" value="" placeholder="Cerca o inizia nuova chat..."v-model="search" >
 
               </div>
 
@@ -82,7 +82,7 @@
            </div>
            <ul id="scroll" class="chat"> <!-- blocco chat sx aside -->
               <!-- per ogni elemento dell'array avrò una lista di utenti con tutte le loro proprietà -->
-             <li v-for="(user,index) in users"  @click="selUser(index)" class="conversazione"> <!-- conversazione -->
+             <li v-for="(user,index) in users"  @click="selUser(index)" class="conversazione" v-if="user.name.toLowerCase().indexOf(search.toLowerCase())>-1"> <!-- conversazione -->
                <div class="conversazione_img"> <!-- conversazione logo -->
 
                  <img :src="user.img" alt="conversazione_1">

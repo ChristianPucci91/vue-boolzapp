@@ -14,6 +14,7 @@ var app = new Vue({
   data: {
     selected:0, // proprietà che mi servirà per confrontare l'index al click
     visible: false,
+    search:'',
     me:[
       {
        name:'Christian Pucci',
@@ -200,4 +201,5 @@ var app = new Vue({
       }, 10);
     }
   },
+
 })

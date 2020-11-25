@@ -9,7 +9,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-      <title>Boolzap</title>
+      <title>Boolzap by Christian Pucci</title>
     </head>
     <body>
 
@@ -76,7 +76,7 @@
                  <img :src="user.img" alt="conversazione_1">
 
                </div>
-               <div class="conversazione_dati"> <!-- dati conversazione -->
+               <div class="conversazione_dati" > <!-- dati conversazione -->
                  <div class="dati_utente"> <!-- nome utente conversazione -->
 
                    <h3>{{user.name}}</h3><span>{{user.chat[user.chat.length - 1].time}}</span>
@@ -157,7 +157,9 @@
 
              </div>
              <div class="user_chat_input">
+
                <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model="newMsg.msg" v-on:keyup.13="enterMsg">
+               
              </div>
              <div class="user_chat_icon">
 
@@ -166,8 +168,6 @@
              </div>
 
            </div>
-
-
 
          </main>
 

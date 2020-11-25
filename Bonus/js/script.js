@@ -8,6 +8,12 @@
 
 // BONUS 3 - Aggiunto la modalità di aggiunta utente cliccando sull'icona in alto a sinitra, una volta aperto il box per inserire l'utente si può cliccare sulla x e il box scompare, altrimenti si aggiunge il nome e il programma inserirà un nuovo utente con un img di default. Se non si inserisce nulla il programma inserirà un nome di default.
 
+//BONUS 4- Aggiunto scroll quando inviamo un msg e riceviamo un msg
+
+// BONUS 5- Aggiunto v-else se il msg della chat che cancelliamo è l'ultimo, casua conflitto con length-1. recuperiamo l'ultimo valore della data e stampiamo
+
+
+
 
 var app = new Vue({
   el: "#root",
@@ -15,6 +21,8 @@ var app = new Vue({
     selected:0, // proprietà che mi servirà per confrontare l'index al click
     visible: false,
     search:'',
+    lastOnline:'',
+    lastMsg:'Ultimo messaggio eliminato',
     me:[
       {
        name:'Christian Pucci',
@@ -139,11 +147,13 @@ var app = new Vue({
     },
     enterMsg: function (index) { // milestone3, aggiungere un messaggio e ricevere una risposta
       // aggiunto bonus risposta randomizzata presa da un array
+      this.lastOnline = this.users[this.selected].chat[this.users[this.selected].chat.length -1].time
       this.getTime();
       this.users[this.selected].chat.push({...this.newMsg});
       this.scrollAuto();
       this.newMsg.msg = ""
       this.cpuMessage();
+
 
     },
     getTime: function() {
@@ -163,6 +173,7 @@ var app = new Vue({
       console.log(min);
       this.cpuMsg.msg = min
       setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg}),this.scrollAuto()), 1000);
+      this.recuperoTime();
 
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     },
@@ -199,7 +210,11 @@ var app = new Vue({
         let chat = document.getElementById("chat");
         chat.scrollTop = chat.scrollHeight;
       }, 10);
+    },
+    recuperoTime(){
+        this.lastOnline = this.users[this.selected].chat[this.users[this.selected].chat.length -1].time
     }
+
   },
 
 })

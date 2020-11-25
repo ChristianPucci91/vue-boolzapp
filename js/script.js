@@ -129,6 +129,7 @@ var app = new Vue({
       this.cpuMsg.msg = min
       setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg})), 1000);
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
-    }
+    },
+
   },
 })

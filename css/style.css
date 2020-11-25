@@ -6,17 +6,13 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-
 i{
   cursor: pointer;
 }
-
 .page {
   display: flex;
-  /* debug */
   height: 100vh;
   background-image: linear-gradient( to bottom,#009687 ,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
-  /* fine debug */
 }
 .container {
  display: flex;
@@ -25,7 +21,6 @@ i{
  box-shadow: 0 2px 2px 2px #c6c7c1;
  margin:auto;
 }
-
 .left {
   display: flex;
   flex-direction: column;
@@ -91,12 +86,10 @@ i{
 .notifiche_text{
   font-size: 14px;
 }
-
 .notifiche_text a{
   text-decoration: underline;
   color:grey;
 }
-
 /* search user */
 .search_user {
   display: flex;
@@ -159,7 +152,6 @@ i{
   color:#b6babc;
   font-size: 13px;
 }
-
 .dati_chat {
   font-size: 14px;
   color: #eaeaea;
@@ -180,7 +172,6 @@ i{
   margin-right: 20px;
   color:#b1b1b1;
 }
-
 .chat_attiva{
   display: flex;
   justify-content: flex-start;
@@ -202,7 +193,6 @@ section{
   background-size:auto;
   overflow-y: auto;
 }
-
 .chat_section{
   width: 80%;
   margin:auto;
@@ -211,7 +201,6 @@ section{
   list-style-type: none;
   margin-top: 30px;
 }
-
 .messaggi{
   display: flex;
   flex-direction: column;
@@ -221,7 +210,6 @@ section{
   margin-bottom: 20px;
   min-width: 30%;
 }
-
 .mandati {
   align-self: flex-end;
   background: #dcf8c6;
@@ -230,7 +218,6 @@ section{
   align-self: flex-start;
   background: white;
 }
-
 .data_msg {
   align-self: flex-end;
   font-size: 10px;
@@ -252,7 +239,6 @@ section{
   min-height: 60px;
   background: #f4eee9;
 }
-
 .user_chat_input {
   width: 80%;
 }

@@ -9,7 +9,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-      <title>Boolzap</title>
+      <title>Boolzap by Christian Pucci</title>
     </head>
     <body>
 
@@ -37,10 +37,10 @@
 
                </div>
 
-               <!-- // TEST ADD USER  -->
+               <!-- //  ADD USER  -->
                <div class="add_user" :class="visible? 'show':'hide'">
                  <div class="delete_friend">
-                      <i class="fas fa-times" @click="deleteUser"></i>
+                    <i class="fas fa-times" @click="deleteUser"></i>
                  </div>
 
                  <h3>Inserisci il nome del nuovo utente</h3>
@@ -88,23 +88,31 @@
                  <img :src="user.img" alt="conversazione_1">
 
                </div>
-               <div class="conversazione_dati"> <!-- dati conversazione -->
-                 <div class="dati_utente"> <!-- nome utente conversazione -->
+               <div class="conversazione_dati" > <!-- dati conversazione -->
+                 <div class="dati_utente"v-if="user.chat.length > 0"> <!-- nome utente conversazione -->
 
                    <h3>{{user.name}}</h3><span>{{user.chat[user.chat.length - 1].time}}</span>
 
                  </div>
-                 <div class="dati_chat"> <!-- conversazione utente -->
+                 <div class="dati_utente"v-else> <!-- nome utente conversazione -->
+
+                   <h3>{{user.name}}</h3><span>{{lastOnline}}</span>
+
+                 </div>
+                 <div class="dati_chat"v-if="user.chat.length > 0"> <!-- conversazione utente -->
 
                    <p>{{user.chat[user.chat.length - 1].msg}}</p>
+
+                 </div>
+                 <div class="dati_chat"v-else> <!-- conversazione utente -->
+
+                   <p>{{lastMsg}}</p>
 
                  </div>
 
                </div>
              </li>
-
            </ul>
-
          </aside>
 
          <!-- /////// PARTE DESTRA ////////// -->
@@ -126,10 +134,16 @@
                    <!-- prenderà la proprietà nome dell'index selezionato -->
 
                  </div>
-                 <div class="connessione_utente"> <!-- connessione utente -->
+                 <div class="connessione_utente" v-if="users[selected].chat.length > 0"> <!-- connessione utente -->
 
                    <p>Ultimo accesso oggi alle {{users[selected].chat[users[selected].chat.length -1].time}}</p>
                    <!-- prenderà ogni ultimo elemento "time" della lunghezza dell'array "chat" dell'index seleionato-->
+
+                 </div>
+                 <div class="connessione_utente" v-else> <!-- connessione utente -->
+
+                   <p>Ultimo accesso oggi alle {{lastOnline}} </p>
+                   <!-- Condizione v-else, l'ultimo messaggio eliminato recupero l'ultimo orario e lo stampo  -->
 
                  </div>
 
@@ -164,7 +178,6 @@
                  </div>
 
                </li>
-
              </ul>
 
            </section>
@@ -176,7 +189,9 @@
 
              </div>
              <div class="user_chat_input">
+
                <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model="newMsg.msg" v-on:keyup.13="enterMsg">
+
              </div>
              <div class="user_chat_icon">
 
@@ -185,8 +200,6 @@
              </div>
 
            </div>
-
-
 
          </main>
 

@@ -14,6 +14,7 @@ var app = new Vue({
   data: {
     selected:0, // proprietà che mi servirà per confrontare l'index al click
     visible: false,
+    deleteMsg:false,
     me:[
       {
        name:'Christian Pucci',
@@ -26,7 +27,7 @@ var app = new Vue({
       chat:[
         {
           time:"",
-          msg:"",
+          msg:"Ciao, mi hai appena aggiunto su whatsapp! Questo è un messaggio automatico",
           send:0,
         }
       ]
@@ -129,6 +130,7 @@ var app = new Vue({
       this.users[this.selected].chat.push({...this.newMsg});
       this.newMsg.msg = ""
       this.cpuMessage();
+
     },
     getTime: function() {
       var currentdate = new Date();
@@ -147,6 +149,7 @@ var app = new Vue({
       console.log(min);
       this.cpuMsg.msg = min
       setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg})), 1000);
+      this.scrollAuto();
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     },
     addUser:function () {
@@ -169,6 +172,19 @@ var app = new Vue({
     },
     deleteUser:function () {
       return this.visible = false;
+    },
+    chevronOpen:function (index) {
+
+      return this.deleteMsg = !this.deleteMsg;
+    },
+    deleteMsg:function () {
+      return this.deleteMsg = false;
+    },
+    scrollAuto:function () {
+      setTimeout(function(){
+        let chat = document.getElementById("chat");
+        chat.scrollTop = chat.scrollHeight;
+      }, 1001);
     }
   },
 })

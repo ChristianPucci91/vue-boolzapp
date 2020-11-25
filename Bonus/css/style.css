@@ -7,38 +7,8 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* // TEST ADD USER  */
-.add_user{
-  position: absolute;
-  height: 150px;
-  width: 350px;
-  text-align: center;
-  padding: 10px;
-  background:#eaeaea;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 0 10px 1px;
-  border-radius: 15px;
-
-}
-.add_user > input{
-  border-radius: 10px;
-  height: 30px;
-  padding: 10px;
-  width: 80%;
-  margin: 10px;
-}
-.add_user > button{
-  border-radius: 10px;
-  height: 30px;
-  width: 80px;
-  margin:10px;
-  background: lightgray;
-  font-weight: bold;
-}
-.delete_friend  {
-  text-align: right;
+i{
+  cursor: pointer;
 }
 
 .show{
@@ -48,16 +18,11 @@
   display: none;
 }
 
-i{
-  cursor: pointer;
-}
-
 .page {
   display: flex;
-  /* debug */
   height: 100vh;
   background-image: linear-gradient( to bottom,#009687 ,#009687 14vh, #d7dbd6 14vh, #d7dbd6 100%);
-  /* fine debug */
+
 }
 .container {
  display: flex;
@@ -84,6 +49,41 @@ i{
 /* Regole aside blocchi interni parte sinistra*/
 
 /* regole blocchi interni .upper_left */
+
+/* BONUS ADD USER */
+.add_user{
+  position: absolute;
+  height: 150px;
+  width: 350px;
+  text-align: center;
+  padding: 10px;
+  background:#eaeaea;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 10px 1px;
+  border-radius: 15px;
+  z-index: 100;
+
+}
+.add_user > input{
+  border-radius: 10px;
+  height: 30px;
+  padding: 10px;
+  width: 80%;
+  margin: 10px;
+}
+.add_user > button{
+  border-radius: 10px;
+  height: 30px;
+  width: 80px;
+  margin:10px;
+  background: lightgray;
+  font-weight: bold;
+}
+.delete_friend  {
+  text-align: right;
+}
 
  /* Nome user  */
 .nome_user {
@@ -254,6 +254,7 @@ section{
 }
 
 .messaggi{
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -284,6 +285,42 @@ section{
   font-weight: bolder;
 }
 
+/* chevron rules */
+
+.msg_text {
+  display: flex;
+  justify-content: space-between;
+}
+.msg_text > h4 {
+  margin-right: 20px;
+}
+.msg_text:hover.msg_text > i{
+  display: block;
+}
+.msg_text > i {
+  font-size:10px;
+  display: none;
+}
+
+/* delete msg  */
+.delete_msg {
+  width: 130px;
+  height: 50px;
+  background: white;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+}
+.delete_msg > * {
+  padding:4px 0;
+}
+.delete_msg > p:first-child {
+  border-bottom: 1px solid black;
+}
 /* sezione user_chat_box */
 
 .user_chat_box {

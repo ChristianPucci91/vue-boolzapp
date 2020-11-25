@@ -314,6 +314,7 @@ section{
   border-radius: 5px;
   font-size: 13px;
   text-align: center;
+  box-shadow: 0 0 10px 1px;
 }
 .delete_msg > * {
   padding:4px 0;

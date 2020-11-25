@@ -140,6 +140,7 @@ var app = new Vue({
       // aggiunto bonus risposta randomizzata presa da un array
       this.getTime();
       this.users[this.selected].chat.push({...this.newMsg});
+      this.scrollAuto();
       this.newMsg.msg = ""
       this.cpuMessage();
 
@@ -160,8 +161,8 @@ var app = new Vue({
       let min = random[Math.floor(Math.random()*random.length)];
       console.log(min);
       this.cpuMsg.msg = min
-      setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg})), 1000);
-      this.scrollAuto();
+      setTimeout(() => (this.getTime(),this.users[this.selected].chat.push({...this.cpuMsg}),this.scrollAuto()), 1000);
+
       // aggiunto setTimeout che farà comparire il msg 1 secondo dopo aver inserito il nostro
     },
     addUser:function () {
@@ -188,14 +189,15 @@ var app = new Vue({
     chevronOpen:function (index) {
       this.users[this.selected].chat[index].deleteMsg =! this.users[this.selected].chat[index].deleteMsg
     },
-    deleteMsg:function () {
+    deleteMessage (index) {
+      Vue.delete(this.users[this.selected].chat,index)
       return this.deleteMsg = false;
     },
     scrollAuto:function () {
       setTimeout(function(){
         let chat = document.getElementById("chat");
         chat.scrollTop = chat.scrollHeight;
-      }, 1001);
+      }, 10);
     }
   },
 })

@@ -151,12 +151,12 @@
 
                  <div class="msg_text">
                    <h4>{{msg.msg}}</h4>
-                   <i class="fas fa-chevron-down" @click="chevronOpen"></i>
+                   <i class="fas fa-chevron-down" @click="chevronOpen(index)"></i>
                  </div>
                  <div class="data_msg">
                    <p>{{msg.time}}</p>
                  </div>
-                 <div class="delete_msg":class="deleteMsg? 'show':'hide'">
+                 <div class="delete_msg":class="msg.deleteMsg? 'show':'hide'">
 
                    <p>Info messaggio</p>
                    <p>Elimina messaggio</p>

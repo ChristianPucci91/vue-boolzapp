@@ -14,7 +14,6 @@ var app = new Vue({
   data: {
     selected:0, // proprietà che mi servirà per confrontare l'index al click
     visible: false,
-    deleteMsg:false,
     me:[
       {
        name:'Christian Pucci',
@@ -29,6 +28,7 @@ var app = new Vue({
           time:"",
           msg:"Ciao, mi hai appena aggiunto su whatsapp! Questo è un messaggio automatico",
           send:0,
+          deleteMsg:false
         }
       ]
     },
@@ -40,17 +40,20 @@ var app = new Vue({
          {
            time:"16:28",
            msg:"ciao Michele come stai?",
-           send:1
+           send:1,
+           deleteMsg:false,
          },
          {
            time:"16:30",
            msg:"tutto bene,grazie",
-           send:0
+           send:0,
+           deleteMsg:false
          },
          {
            time:"16:35",
            msg:"Te come va?",
-           send:0
+           send:0,
+           deleteMsg:false
          }
        ]
       },
@@ -61,17 +64,20 @@ var app = new Vue({
          {
            time:"16:28",
            msg:"ciao Giovanni come stai?",
-           send:1
+           send:1,
+           deleteMsg:false
          },
          {
            time:"16:29",
            msg:"Ho visto tuo fratello",
-           send:1
+           send:1,
+           deleteMsg:false
          },
          {
            time:"16:40",
            msg:"tutto bene,grazie te?",
-           send:0
+           send:0,
+           deleteMsg:false
          }
        ]
       },
@@ -82,12 +88,14 @@ var app = new Vue({
          {
            time:"16:28",
            msg:"ciao Fabio come stai?",
-           send:1
+           send:1,
+           deleteMsg:false
          },
          {
            time:"16:50",
            msg:"tutto bene,grazie te? come va?",
-           send:0
+           send:0,
+           deleteMsg:false
          }
        ]
       },
@@ -98,12 +106,14 @@ var app = new Vue({
          {
            time:"16:05",
            msg:"ciao David come stai?",
-           send:1
+           send:1,
+           deleteMsg:false
          },
          {
            time:"16:10",
            msg:"tutto bene,grazie!!!",
-           send:0
+           send:0,
+           deleteMsg:false
          }
        ]
       },
@@ -111,12 +121,14 @@ var app = new Vue({
    newMsg:{ // nuovo array per i messaggi inviati
      time:"",
      msg:"",
-     send:1
+     send:1,
+     deleteMsg:false
    },
    cpuMsg:{ // nuovo array per i messaggi inviativ dalla cpu
      time:"",
      msg:"",
-     send:0
+     send:0,
+     deleteMsg:false
    },
 
   },
@@ -174,8 +186,7 @@ var app = new Vue({
       return this.visible = false;
     },
     chevronOpen:function (index) {
-
-      return this.deleteMsg = !this.deleteMsg;
+      this.users[this.selected].chat[index].deleteMsg =! this.users[this.selected].chat[index].deleteMsg
     },
     deleteMsg:function () {
       return this.deleteMsg = false;
